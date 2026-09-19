@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 DIGITAL — МУЗЫКАЛЬНЫЙ ЛЕЙБЛ</title>
+  <meta name="description" content="F1 DIGITAL/LABEL — закрытый музыкальный лейбл.">
+  <link rel="icon" href="https://music-bandlink.s3.yandex.net/img/bandlinks/245975e4-f487-415e-9a29-a22da36b5ba6_1120_1120.jpeg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bgDark: '#0A0B0E',
+            accentPurple: '#A855F7',
+            accentGlow: '#9333EA',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.4);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(168, 85, 247, 0.8);
+    }
+  </style>
+</head>
+<body id="body" class="bg-[#0a0b0e] text-white min-h-screen relative flex flex-col items-center justify-between font-sans selection:bg-[#a855f7] selection:text-white pb-20 transition-colors duration-300">
+
+  <!-- Glow effects -->
+  <div id="glow1" class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0 transition-opacity duration-300 bg-purple-600/20 opacity-100"></div>
+  <div id="glow2" class="fixed bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full blur-[100px] pointer-events-none z-0 transition-opacity duration-300 bg-indigo-600/15 opacity-100"></div>
+
+  <!-- Background logo blur -->
+  <div id="bgBlur" class="fixed inset-0 pointer-events-none z-0 bg-cover bg-center filter blur-3xl scale-125 transition-all duration-700 opacity-35" style="background-image: url('https://music-bandlink.s3.yandex.net/img/bandlinks/245975e4-f487-415e-9a29-a22da36b5ba6_1120_1120.jpeg');"></div>
+
+  <div class="w-full max-w-[480px] px-4 py-6 flex flex-col items-center z-10 relative">
+    
+    <!-- Top Header Bar -->
+    <div class="w-full flex justify-between items-center mb-5 px-1">
+      <div class="flex items-center space-x-1.5 font-extrabold text-sm tracking-wider">
+        <span id="headerTitle" class="text-white drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+          F1 DIGITAL
+        </span>
+      </div>
+
+      <button id="themeToggle" class="p-2.5 rounded-full border transition-all duration-300 backdrop-blur-xl bg-white/10 border-white/20 text-yellow-400 hover:bg-white/20 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]" title="Сменить тему">
+        <svg id="sunIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        <svg id="moonIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+      </button>
+    </div>
+
+    <!-- Main Cover Card -->
+    <div id="mainCoverCard" class="relative w-full aspect-square rounded-3xl overflow-hidden mb-4 group border transition-all duration-500 backdrop-blur-2xl border-white/20 hover:border-purple-500/80 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] shadow-2xl">
+      <img src="https://music-bandlink.s3.yandex.net/img/bandlinks/245975e4-f487-415e-9a29-a22da36b5ba6_1120_1120.jpeg" alt="F1 DIGITAL" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6">
+        <div class="flex items-center space-x-2">
+          <h1 class="text-3xl font-black tracking-wider uppercase drop-shadow-md text-white">
+            F1 DIGITAL
+          </h1>
+          <svg class="w-7 h-7 text-[#0088cc] fill-[#0088cc] drop-shadow-[0_0_8px_rgba(0,136,204,0.6)]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Links Block -->
+    <div class="w-full grid grid-cols-3 gap-3 mb-4">
+      <a href="https://music.yandex.ru/label/6659834" target="_blank" rel="noopener noreferrer" class="social-btn flex flex-col items-center justify-center p-3.5 border rounded-2xl transition-all duration-300 group active:scale-95 backdrop-blur-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.12] hover:border-purple-500/70 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)]">
+        <svg class="w-6 h-6 text-[#ff0033] mb-1.5 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        <span class="text-xs font-semibold">Яндекс Музыка</span>
+      </a>
+      <a href="https://t.me/F1digital" target="_blank" rel="noopener noreferrer" class="social-btn flex flex-col items-center justify-center p-3.5 border rounded-2xl transition-all duration-300 group active:scale-95 backdrop-blur-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.12] hover:border-purple-500/70 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)]">
+        <svg class="w-6 h-6 text-[#2AABEE] mb-1.5 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.38-.49 1.07-.75 4.19-1.82 6.98-3.02 8.38-3.6 3.98-1.66 4.81-1.95 5.35-1.96.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.21-.04.36z"/></svg>
+        <span class="text-xs font-semibold">Telegram</span>
+      </a>
+      <a href="https://genius.com/artists/F1-digital" target="_blank" rel="noopener noreferrer" class="social-btn flex flex-col items-center justify-center p-3.5 border rounded-2xl transition-all duration-300 group active:scale-95 backdrop-blur-xl bg-white/[0.05] border-white/10 hover:bg-white/[0.12] hover:border-purple-500/70 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)]">
+        <svg class="w-6 h-6 text-[#eab308] mb-1.5 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+        <span class="text-xs font-semibold">Genius</span>
+      </a>
+    </div>
+
+    <!-- About Section -->
+    <div id="aboutBox" class="w-full border rounded-2xl p-5 mb-8 backdrop-blur-xl transition-all duration-300 bg-white/[0.04] border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+      <h2 id="aboutHeader" class="text-xs font-extrabold tracking-wider uppercase mb-2 text-purple-400 drop-shadow-[0_0_6px_rgba(168,85,247,0.4)]">
+        О ЛЕЙБЛЕ:
+      </h2>
+      <p id="aboutText" class="text-sm leading-relaxed font-normal text-gray-300">
+        F1 DIGITAL/LABEL — закрытый музыкальный лейбл. Здесь выходят релизы своих артистов, а вся работа и развитие проходят внутри лейбла.
+      </p>
+    </div>
+
+    <!-- Release Carousel Section -->
+    <div id="releaseBox" class="w-full border rounded-3xl p-5 mb-8 backdrop-blur-2xl transition-all duration-300 bg-white/[0.04] border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]">
+      <div class="flex justify-between items-center mb-4 px-1">
+        <h2 id="releaseBoxTitle" class="text-xl font-bold tracking-tight text-white">
+          Релизы Furfyrch1k
+        </h2>
+        <div class="flex items-center space-x-1">
+          <span id="releaseCounter" class="text-xs font-semibold px-2.5 py-0.5 rounded-full text-purple-300 bg-purple-950/60">
+            1 / 4
+          </span>
+        </div>
+      </div>
+
+      <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-xl border border-black/10 group">
+        <a id="releaseLink" href="" target="_blank" rel="noopener noreferrer" class="w-full h-full block cursor-pointer">
+          <img id="releaseCover" src="" alt="Release Cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </a>
+
+        <button id="prevReleaseBtn" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-lg transition-all transform active:scale-95 backdrop-blur-md z-10" title="Предыдущий релиз">
+          <svg class="w-5 h-5 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <button id="nextReleaseBtn" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-lg transition-all transform active:scale-95 backdrop-blur-md z-10" title="Следующий релиз">
+          <svg class="w-5 h-5 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="text-center mb-4">
+        <a id="releaseTitle" href="" target="_blank" rel="noopener noreferrer" class="font-extrabold text-lg tracking-tight hover:text-purple-400 transition-colors text-white block"></a>
+        <div id="releaseArtist" class="text-sm font-medium text-purple-400"></div>
+      </div>
+
+      <a id="releaseBtn" href="" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-4 rounded-xl font-extrabold text-sm text-white bg-gradient-to-r from-purple-700 via-purple-600 to-indigo-600 hover:from-purple-600 hover:to-indigo-500 shadow-lg shadow-purple-600/35 hover:shadow-purple-500/50 flex items-center justify-center space-x-2 transition-all transform active:scale-[0.98] border border-purple-400/30">
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        <span>Слушать в Apple Music</span>
+      </a>
+    </div>
+
+    <!-- Artist Carousel Section -->
+    <div id="artistBox" class="w-full border rounded-3xl p-5 mb-8 backdrop-blur-2xl transition-all duration-300 bg-white/[0.04] border-white/10 hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)]">
+      <div class="flex justify-between items-center mb-4 px-1">
+        <h2 id="artistBoxTitle" class="text-xl font-bold tracking-tight text-white">
+          Артисты
+        </h2>
+        <div class="flex items-center space-x-1">
+          <span id="artistCounter" class="text-xs font-semibold px-2.5 py-0.5 rounded-full text-purple-300 bg-purple-950/60">
+            1 / 6
+          </span>
+        </div>
+      </div>
+
+      <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-xl border border-black/10 group">
+        <a id="artistLink" href="" target="_blank" rel="noopener noreferrer" class="w-full h-full block cursor-pointer">
+          <img id="artistAvatar" src="" alt="Artist Avatar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </a>
+
+        <button id="prevArtistBtn" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-lg transition-all transform active:scale-95 backdrop-blur-md z-10" title="Предыдущий артист">
+          <svg class="w-5 h-5 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <button id="nextArtistBtn" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-gray-900 flex items-center justify-center shadow-lg transition-all transform active:scale-95 backdrop-blur-md z-10" title="Следующий артист">
+          <svg class="w-5 h-5 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="text-center">
+        <a id="artistName" href="" target="_blank" rel="noopener noreferrer" class="font-extrabold text-2xl tracking-tight inline-flex items-center space-x-1.5 transition-colors text-white hover:text-purple-400">
+          <span id="artistNameText"></span>
+          <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <div id="artistGenre" class="text-sm font-medium mt-1 text-purple-400"></div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contactBox" class="w-full border rounded-2xl p-5 text-center transition-all duration-300 backdrop-blur-xl bg-white/[0.04] border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+      <div class="text-xs font-bold text-gray-400 tracking-wider uppercase mb-2">
+        связаться с нами
+      </div>
+      <div id="copyEmailBtn" class="inline-flex items-center justify-center space-x-2 text-base font-semibold transition-colors cursor-pointer py-1 px-3 rounded-xl hover:text-purple-400 hover:bg-white/5">
+        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span>f1didgital@gmail.com</span>
+        <svg id="copyIcon" class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        <svg id="checkIcon" class="w-4 h-4 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md backdrop-blur-2xl border p-4.5 rounded-2xl shadow-2xl z-40 flex flex-col space-y-3 transition-all duration-300 bg-[#0a0b0e]/90 border-purple-500/30 text-gray-300 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+    <div class="text-xs leading-relaxed">
+      Этот сайт использует файлы <span class="underline font-semibold">cookie</span>. Cookies необходимы для оптимальной работы нашего сервиса. Используя сайт, Вы соглашаетесь с обработкой ваших файлов cookie. Подробнее в нашей 
+      <a href="https://yandex.ru/legal/cookies_policy/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:underline font-medium">
+        Политике конфиденциальности.
+      </a>
+    </div>
+    <div class="flex justify-end">
+      <button id="acceptCookie" class="bg-purple-700 hover:bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all duration-200 shadow-[0_0_12px_rgba(147,51,234,0.4)]">
+        Принять
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const releases = [
+      {
+        title: "это лето (Dance Remix)",
+        artist: "Furfyrch1k feat. chikofani",
+        type: "Single",
+        cover: "https://music-bandlink.s3.yandex.net/img/bandlinks/b60b856d-ad47-4f5d-b83f-fcf1cc2462b9_1120_1192.jpeg",
+        url: "https://music.apple.com/az/album/%D1%8D%D1%82%D0%BE-%D0%BB%D0%B5%D1%82%D0%BE-dance-remix-feat-chikofani-single/6802234389"
+      },
+      {
+        title: "всё горит",
+        artist: "Furfyrch1k feat. НЕМЕДИЙНОСТЬ",
+        type: "Single",
+        cover: "https://music-bandlink.s3.yandex.net/img/bandlinks/YayFp_tHTd3asN.jpeg",
+        url: "https://music.apple.com/az/album/%D0%B2%D1%81%D1%91-%D0%B3%D0%BE%D1%80%D0%B8%D1%82-feat-%D0%BD%D0%B5%D0%BC%D0%B5%D0%B4%D0%B8%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%8C-single/6802226024"
+      },
+      {
+        title: "Energy Hard",
+        artist: "Furfyrch1k",
+        type: "Single",
+        cover: "https://music-bandlink.s3.yandex.net/img/bandlinks/9d506289-e726-40cb-aa39-3e017adcf23c_500_500.jpeg",
+        url: "https://music.apple.com/az/album/energy-hard-single/6787283824"
+      },
+      {
+        title: "Fun Dance",
+        artist: "Furfyrch1k",
+        type: "Single",
+        cover: "https://music-bandlink.s3.yandex.net/img/bandlinks/3914a5ba-151c-4447-b148-1afbe66d99b5_500_500.jpeg",
+        url: "https://music.apple.com/az/album/fun-dance-single/6795427680"
+      }
+    ];
+
+    const artists = [
+      {
+        name: "Furfyrch1k",
+        url: "https://music.yandex.ru/artist/25894795",
+        avatar: "https://avatars.yandex.net/get-music-content/21498071/503989b2.p.25894795/m1000x1000",
+        genre: "Hip-Hop / Rap"
+      },
+      {
+        name: "Corridor 5",
+        url: "https://music.yandex.ru/artist/23145962",
+        avatar: "https://avatars.yandex.net/get-music-content/20712233/83211d12.p.23145962/m1000x1000",
+        genre: "Hip-Hop / Rap"
+      },
+      {
+        name: "какексик",
+        url: "https://music.yandex.ru/artist/21930326",
+        avatar: "https://i.postimg.cc/8P9CYphF/photo-2026-09-18-22-03-39.jpg",
+        genre: "Hip-Hop / Rap"
+      },
+      {
+        name: "НЕМЕДИЙНОСТЬ",
+        url: "https://music.yandex.ru/artist/23768115",
+        avatar: "https://i.postimg.cc/NMdskBsQ/photo-2026-06-09-22-54-33.jpg",
+        genre: "Hip-Hop / Rap"
+      },
+      {
+        name: "MrVizor",
+        url: "https://music.yandex.ru/artist/25137908",
+        avatar: "https://avatars.yandex.net/get-music-content/18172800/617e8861.p.25137908/m1000x1000",
+        genre: "Hip-Hop / Rap"
+      },
+      {
+        name: "JDdijey",
+        url: "https://music.yandex.ru/artist/23423364",
+        avatar: "https://music-bandlink.s3.yandex.net/img/bandlinks/b1ee5770-b27a-4edb-951d-1cd6f12df07b_1120_1120.jpeg",
+        genre: "Electronic / EDM"
+      }
+    ];
+
+    let currentReleaseIndex = 0;
+    let currentArtistIndex = 0;
+    let currentTheme = 'dark';
+
+    function updateRelease() {
+      const rel = releases[currentReleaseIndex];
+      document.getElementById('releaseCounter').innerText = `${currentReleaseIndex + 1} / ${releases.length}`;
+      document.getElementById('releaseLink').href = rel.url;
+      document.getElementById('releaseCover').src = rel.cover;
+      document.getElementById('releaseTitle').href = rel.url;
+      document.getElementById('releaseTitle').innerText = rel.title;
+      document.getElementById('releaseArtist').innerText = `${rel.artist} • ${rel.type}`;
+      document.getElementById('releaseBtn').href = rel.url;
+    }
+
+    function updateArtist() {
+      const art = artists[currentArtistIndex];
+      document.getElementById('artistCounter').innerText = `${currentArtistIndex + 1} / ${artists.length}`;
+      document.getElementById('artistLink').href = art.url;
+      document.getElementById('artistAvatar').src = art.avatar;
+      document.getElementById('artistName').href = art.url;
+      document.getElementById('artistNameText').innerText = art.name;
+      document.getElementById('artistGenre').innerText = art.genre;
+    }
+
+    document.getElementById('prevReleaseBtn').addEventListener('click', () => {
+      currentReleaseIndex = (currentReleaseIndex - 1 + releases.length) % releases.length;
+      updateRelease();
+    });
+
+    document.getElementById('nextReleaseBtn').addEventListener('click', () => {
+      currentReleaseIndex = (currentReleaseIndex + 1) % releases.length;
+      updateRelease();
+    });
+
+    document.getElementById('prevArtistBtn').addEventListener('click', () => {
+      currentArtistIndex = (currentArtistIndex - 1 + artists.length) % artists.length;
+      updateArtist();
+    });
+
+    document.getElementById('nextArtistBtn').addEventListener('click', () => {
+      currentArtistIndex = (currentArtistIndex + 1) % artists.length;
+      updateArtist();
+    });
+
+    // Theme toggle logic
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const body = document.getElementById('body');
+      const sunIcon = document.getElementById('sunIcon');
+      const moonIcon = document.getElementById('moonIcon');
+      const headerTitle = document.getElementById('headerTitle');
+      const themeToggle = document.getElementById('themeToggle');
+      const mainCoverCard = document.getElementById('mainCoverCard');
+      const glow1 = document.getElementById('glow1');
+      const glow2 = document.getElementById('glow2');
+      const bgBlur = document.getElementById('bgBlur');
+
+      if (currentTheme === 'light') {
+        body.className = "bg-[#f3f4f8] text-[#111827] min-h-screen relative flex flex-col items-center justify-between font-sans selection:bg-[#a855f7] selection:text-white pb-20 transition-colors duration-300";
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        headerTitle.className = "text-gray-900 font-extrabold";
+        themeToggle.className = "p-2.5 rounded-full border transition-all duration-300 backdrop-blur-xl bg-white border-gray-200 text-purple-700 hover:bg-gray-50 hover:border-purple-400 shadow-sm hover:shadow-[0_0_12px_rgba(147,51,234,0.3)]";
+        mainCoverCard.className = "relative w-full aspect-square rounded-3xl overflow-hidden mb-4 group border transition-all duration-500 backdrop-blur-2xl border-gray-200 hover:border-purple-600 hover:shadow-[0_0_30px_rgba(147,51,234,0.35)] shadow-xl";
+        glow1.className = "fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0 transition-opacity duration-300 bg-purple-500/10 opacity-70";
+        glow2.className = "fixed bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full blur-[100px] pointer-events-none z-0 transition-opacity duration-300 bg-purple-400/10 opacity-60";
+        bgBlur.className = "fixed inset-0 pointer-events-none z-0 bg-cover bg-center filter blur-3xl scale-125 transition-all duration-700 opacity-20";
+      } else {
+        body.className = "bg-[#0a0b0e] text-white min-h-screen relative flex flex-col items-center justify-between font-sans selection:bg-[#a855f7] selection:text-white pb-20 transition-colors duration-300";
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        headerTitle.className = "text-white drop-shadow-[0_0_10px_rgba(168,85,247,0.5)] font-extrabold";
+        themeToggle.className = "p-2.5 rounded-full border transition-all duration-300 backdrop-blur-xl bg-white/10 border-white/20 text-yellow-400 hover:bg-white/20 hover:border-purple-400 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]";
+        mainCoverCard.className = "relative w-full aspect-square rounded-3xl overflow-hidden mb-4 group border transition-all duration-500 backdrop-blur-2xl border-white/20 hover:border-purple-500/80 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] shadow-2xl";
+        glow1.className = "fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0 transition-opacity duration-300 bg-purple-600/20 opacity-100";
+        glow2.className = "fixed bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full blur-[100px] pointer-events-none z-0 transition-opacity duration-300 bg-indigo-600/15 opacity-100";
+        bgBlur.className = "fixed inset-0 pointer-events-none z-0 bg-cover bg-center filter blur-3xl scale-125 transition-all duration-700 opacity-35";
+      }
+    });
+
+    // Copy email
+    document.getElementById('copyEmailBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText('f1didgital@gmail.com');
+      document.getElementById('copyIcon').classList.add('hidden');
+      document.getElementById('checkIcon').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('copyIcon').classList.remove('hidden');
+        document.getElementById('checkIcon').classList.add('hidden');
+      }, 2000);
+    });
+
+    // Cookie banner
+    document.getElementById('acceptCookie').addEventListener('click', () => {
+      document.getElementById('cookieBanner').style.display = 'none';
+    });
+
+    // Init
+    updateRelease();
+    updateArtist();
+  </script>
+</body>
+</html>
